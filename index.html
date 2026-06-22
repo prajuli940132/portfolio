@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prakash Parajuli| IT Security & Service Desk Professional</title>
+<meta name="description" content="Portfolio of Prakash — IT Service Desk Analyst, SOC L1 & Security Analyst candidate. ISC2 CC | CCNA certified."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:    #0D1F35;
+  --navy2:   #122840;
+  --steel:   #1A5E9A;
+  --blue:    #2E80C8;
+  --cyan:    #38BDF8;
+  --text:    #E2EAF4;
+  --muted:   #7E99B8;
+  --card:    #0F2236;
+  --card2:   #142B42;
+  --border:  #1E3A55;
+  --white:   #FFFFFF;
+  --green:   #22C55E;
+  --radius:  10px;
+  --mono:    'JetBrains Mono', monospace;
+  --sans:    'Inter', sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--navy);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+
+/* ── NAV ──────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(13,31,53,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:58px;
+}
+.nav-logo{
+  font-family:var(--mono);
+  font-size:1rem;font-weight:500;
+  color:var(--cyan);
+  letter-spacing:0.04em;
+}
+.nav-logo span{color:var(--muted)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{
+  font-size:0.82rem;font-weight:500;
+  color:var(--muted);letter-spacing:0.04em;
+  text-transform:uppercase;transition:color .2s;
+}
+.nav-links a:hover{color:var(--cyan);text-decoration:none}
+.nav-cta{
+  background:var(--steel);color:var(--white)!important;
+  padding:0.35rem 1rem;border-radius:6px;
+  transition:background .2s!important;
+}
+.nav-cta:hover{background:var(--blue)!important;text-decoration:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--text);display:block;transition:.3s}
+.mobile-menu{
+  display:none;position:fixed;top:58px;left:0;right:0;z-index:99;
+  background:var(--navy2);border-bottom:1px solid var(--border);
+  padding:1rem 2rem;flex-direction:column;gap:1rem;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--muted);font-size:0.9rem;font-weight:500;text-transform:uppercase;letter-spacing:0.04em}
+.mobile-menu a:hover{color:var(--cyan);text-decoration:none}
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:80px 2rem 4rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(46,128,200,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 40% at 20% 80%, rgba(56,189,248,0.06) 0%, transparent 60%);
+  pointer-events:none;
+}
+/* Subtle grid lines */
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(46,128,200,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,128,200,0.04) 1px, transparent 1px);
+  background-size:40px 40px;
+  pointer-events:none;
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 340px;gap:4rem;
+  align-items:center;position:relative;z-index:1;
+}
+.hero-eyebrow{
+  font-family:var(--mono);font-size:0.78rem;
+  color:var(--cyan);letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--cyan)}
+.hero-name{
+  font-size:clamp(2.4rem,5vw,3.6rem);
+  font-weight:700;line-height:1.1;
+  color:var(--white);margin-bottom:0.5rem;
+}
+.hero-roles{
+  font-size:clamp(1rem,2.2vw,1.25rem);
+  font-weight:400;color:var(--muted);
+  margin-bottom:1.5rem;line-height:1.4;
+}
+.hero-roles strong{color:var(--cyan);font-weight:600}
+.hero-summary{
+  font-size:0.95rem;color:var(--muted);
+  max-width:540px;margin-bottom:2rem;line-height:1.75;
+}
+.hero-badges{
+  display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.2rem;
+}
+.badge{
+  font-family:var(--mono);font-size:0.72rem;
+  padding:0.3rem 0.75rem;border-radius:20px;
+  border:1px solid var(--border);
+  color:var(--cyan);background:rgba(46,128,200,0.08);
+  letter-spacing:0.04em;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem}
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.65rem 1.4rem;border-radius:8px;
+  font-size:0.88rem;font-weight:600;
+  transition:all .2s;cursor:pointer;text-decoration:none!important;
+  border:none;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#2270b5;transform:translateY(-1px)}
+.btn-outline{
+  background:transparent;color:var(--cyan);
+  border:1px solid var(--cyan);
+}
+.btn-outline:hover{background:rgba(56,189,248,0.08);transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:var(--muted);
+  border:1px solid var(--border);
+}
+.btn-ghost:hover{color:var(--text);border-color:var(--muted);transform:translateY(-1px)}
+
+/* Profile photo */
+.hero-photo-wrap{
+  display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+}
+.profile-ring{
+  width:240px;height:240px;border-radius:50%;
+  background:linear-gradient(135deg, var(--steel), var(--cyan));
+  padding:3px;position:relative;
+}
+.profile-ring-inner{
+  width:100%;height:100%;border-radius:50%;
+  background:var(--card);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;position:relative;
+}
+.profile-ring-inner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  transform:scale(1.25);
+}
+.profile-placeholder{
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  color:var(--muted);font-size:0.75rem;text-align:center;
+  padding:1rem;
+}
+.profile-placeholder svg{width:56px;height:56px;opacity:.4}
+.status-pill{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.75rem;color:var(--green);
+  background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);
+  padding:0.3rem 0.9rem;border-radius:20px;
+  font-family:var(--mono);
+}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+  animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ── SECTION COMMONS ──────────────────────────────────────── */
+section{padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{
+  font-family:var(--mono);font-size:0.75rem;
+  color:var(--cyan);letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem;
+}
+.section-label::before{content:'';width:20px;height:1px;background:var(--cyan)}
+.section-title{
+  font-size:clamp(1.5rem,3vw,2rem);font-weight:700;
+  color:var(--white);margin-bottom:0.6rem;
+}
+.section-sub{font-size:0.95rem;color:var(--muted);max-width:560px;margin-bottom:3rem}
+
+/* ── ABOUT ────────────────────────────────────────────────── */
+.about{background:var(--navy2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-text p{color:var(--muted);font-size:0.95rem;line-height:1.8;margin-bottom:1rem}
+.about-text p:last-child{margin-bottom:0}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.25rem;text-align:center;
+}
+.stat-number{
+  font-size:2rem;font-weight:700;color:var(--cyan);
+  font-family:var(--mono);display:block;margin-bottom:0.2rem;
+}
+.stat-label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em}
+
+/* ── SKILLS ───────────────────────────────────────────────── */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.skill-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.4rem;
+  transition:border-color .2s,transform .2s;
+}
+.skill-card:hover{border-color:var(--steel);transform:translateY(-2px)}
+.skill-card-icon{
+  width:36px;height:36px;background:rgba(46,128,200,0.15);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:0.8rem;font-size:1.1rem;
+}
+.skill-card-title{font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:0.6rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.skill-tag{
+  font-size:0.7rem;font-family:var(--mono);
+  padding:0.2rem 0.55rem;border-radius:4px;
+  background:rgba(56,189,248,0.08);
+  border:1px solid rgba(56,189,248,0.2);
+  color:var(--cyan);
+}
+
+/* ── EXPERIENCE ───────────────────────────────────────────── */
+.exp{background:var(--navy2)}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{
+  content:'';position:absolute;left:0;top:8px;bottom:0;
+  width:1px;background:linear-gradient(to bottom, var(--steel), transparent);
+}
+.exp-item{position:relative;margin-bottom:2.5rem}
+.exp-item:last-child{margin-bottom:0}
+.exp-dot{
+  position:absolute;left:-2.375rem;top:6px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--blue);border:2px solid var(--navy2);
+  box-shadow:0 0 0 3px rgba(46,128,200,0.25);
+}
+.exp-header{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;flex-wrap:wrap;gap:0.5rem;
+  margin-bottom:0.25rem;
+}
+.exp-title{font-size:1rem;font-weight:600;color:var(--white)}
+.exp-date{
+  font-family:var(--mono);font-size:0.75rem;
+  color:var(--muted);background:var(--card);
+  border:1px solid var(--border);padding:0.2rem 0.6rem;border-radius:4px;
+  white-space:nowrap;
+}
+.exp-company{font-size:0.85rem;color:var(--cyan);font-weight:500;margin-bottom:0.8rem}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.exp-bullets li{
+  font-size:0.88rem;color:var(--muted);
+  padding-left:1.1rem;position:relative;line-height:1.6;
+}
+.exp-bullets li::before{
+  content:'▸';position:absolute;left:0;
+  color:var(--steel);font-size:0.75rem;top:2px;
+}
+
+/* ── CERTIFICATIONS / BADGES ──────────────────────────────── */
+.certs{background:var(--navy)}
+.badges-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.2rem}
+.badge-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.5rem 1.2rem;
+  text-align:center;transition:all .25s;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;gap:0.8rem;
+}
+.badge-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(46,128,200,0.06),transparent);
+  opacity:0;transition:.25s;
+}
+.badge-card:hover{border-color:var(--steel);transform:translateY(-3px)}
+.badge-card:hover::before{opacity:1}
+.badge-icon{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,var(--steel),rgba(56,189,248,0.6));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;position:relative;
+}
+.badge-icon::after{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  border:1px solid rgba(56,189,248,0.3);
+}
+.badge-name{font-size:0.85rem;font-weight:600;color:var(--white);line-height:1.3}
+.badge-issuer{font-size:0.72rem;color:var(--muted);font-family:var(--mono)}
+.badge-year{
+  font-size:0.68rem;font-family:var(--mono);
+  color:var(--cyan);background:rgba(56,189,248,0.08);
+  border:1px solid rgba(56,189,248,0.2);
+  padding:0.15rem 0.5rem;border-radius:20px;
+}
+
+
+.badge-card{
+  cursor:pointer;
+}
+
+.certificate-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+}
+
+.certificate-modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+
+.close-certificate{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:42px;
+  color:#fff;
+  cursor:pointer;
+  user-select:none;
+}
+
+/* ── CONTACT ──────────────────────────────────────────────── */
+.contact-section{background:var(--navy2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1rem}
+.contact-card{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:1.1rem 1.2rem;
+  transition:border-color .2s;
+}
+.contact-card:hover{border-color:var(--steel)}
+.contact-icon{
+  width:40px;height:40px;min-width:40px;
+  background:rgba(46,128,200,0.15);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+}
+.contact-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:0.06em;margin-bottom:0.15rem;font-family:var(--mono)}
+.contact-value{font-size:0.9rem;color:var(--text);font-weight:500}
+.contact-value a{color:var(--text)}
+.contact-value a:hover{color:var(--cyan)}
+
+/* Open to work box */
+.open-to-work{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2rem;
+}
+.otw-title{font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
+.otw-sub{font-size:0.88rem;color:var(--muted);margin-bottom:1.4rem;line-height:1.6}
+.role-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.4rem}
+.role-tag{
+  font-size:0.78rem;padding:0.3rem 0.8rem;border-radius:20px;
+  background:rgba(46,128,200,0.12);border:1px solid var(--steel);
+  color:var(--cyan);font-weight:500;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+footer{
+  background:var(--navy);border-top:1px solid var(--border);
+  padding:2rem;text-align:center;
+}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.footer-links a{
+  font-size:0.8rem;color:var(--muted);
+  transition:color .2s;text-transform:uppercase;
+  letter-spacing:0.06em;font-family:var(--mono);
+}
+.footer-links a:hover{color:var(--cyan);text-decoration:none}
+.footer-copy{font-size:0.78rem;color:var(--muted)}
+
+/* ── SCROLL REVEAL ────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-photo-wrap{order:-1}
+  .hero-eyebrow{justify-content:center}
+  .hero-summary{margin-left:auto;margin-right:auto}
+  .hero-badges{justify-content:center}
+  .hero-actions{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+@media(max-width:600px){
+  .skills-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .badges-grid{grid-template-columns:repeat(2,1fr)}
+  section{padding:3.5rem 1.25rem}
+  .profile-ring{width:180px;height:180px}
+}
+
+/* ── HERO CANVAS ──────────────────────────────────────────── */
+#heroCanvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:0;
+  opacity:0.5;
+  transition:opacity 0.8s ease;
+}
+#heroCanvas.paused{opacity:0}
+.hero-inner{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){#heroCanvas{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo"><span>//</span> prakash<span> parajuli</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="assets/prakash_parajuli_resume.pdf" download class="nav-cta">Download CV</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#certifications" onclick="closeMenu()">Certifications</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="assets/prakash_parajuli_resume.pdf" onclick="closeMenu()">⬇ Download CV</a>
+</div>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-eyebrow">IT Security &amp; Support Professional</p>
+      <h1 class="hero-name">Prakash</h1>
+      <p class="hero-roles">
+        <strong>Service Desk Analyst · SOC L1 Analyst<br>
+        · Security Analyst · IT Support Specialist</strong>
+      </p>
+      <p class="hero-summary">
+        5+ years of investigation, anomaly triage, and risk analysis at Amazon India.
+        Now bringing that same structured, security-first mindset to IT operations and
+        cybersecurity. ISC2 CC &amp; CCNA certified. Based in Bengaluru, India.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">ISC2 Certified in Cybersecurity</span>
+        <span class="badge">CCNA</span>
+        <span class="badge">MCA</span>
+        <span class="badge">5+ yrs Experience</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Get In Touch
+        </a>
+        <a href="assets/prakash_parajuli_resume.pdf" download class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+        <a href="https://www.linkedin.com/in/socprajuli94/" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/prajuli940132" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="profile-ring">
+        <div class="profile-ring-inner">
+          
+            REPLACE WITH YOUR PHOTO:
+            <img src="assets/prakash_profile.jpg" alt="Prakash" />
+          <!--
+            To add your photo:
+            1. Name your photo "profile.jpg"
+            2. Place it in the same folder as this HTML file
+            3. Remove the profile-placeholder div below
+            4. Uncomment the img tag above
+          -->
+          <div class="profile-placeholder">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" color="#7E99B8">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Add profile.jpg<br>to this folder</span>
+          </div>
+        </div>
+      </div>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Open to Opportunities
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <p class="section-label reveal">About Me</p>
+    <h2 class="section-title reveal">Bridging Investigation & IT Security</h2>
+    <p class="section-sub reveal">A background in high-stakes operational analysis, now focused on cybersecurity and IT support.</p>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I spent 5+ years at <strong style="color:var(--text)">Amazon India</strong> as an Investigation Specialist in Fraud &amp; Risk Operations — triaging 80–100 cases daily, analysing logs and audit trails, conducting root cause analysis, and maintaining strict SLA compliance. The work was fundamentally about identifying threats, isolating anomalies, and resolving incidents fast.
+        </p>
+        <p>
+          That experience maps directly onto IT service desk and SOC operations. I've since formalised that expertise with an <strong style="color:var(--cyan)">ISC2 Certified in Cybersecurity (CC)</strong> and <strong style="color:var(--cyan)">Cisco CCNA</strong> certification, and I hold an MCA in Computer Applications.
+        </p>
+        <p>
+          I'm now targeting <strong style="color:var(--text)">IT Service Desk</strong>, <strong style="color:var(--text)">SOC L1</strong>, and <strong style="color:var(--text)">Security Analyst</strong> roles where I can apply structured problem-solving, security awareness, and clear communication to keep systems running and users unblocked.
+        </p>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">80–100</span>
+          <span class="stat-label">Cases/Day Triaged</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">MCA</span>
+          <span class="stat-label">Academic Qualification</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label reveal">Capabilities</p>
+    <h2 class="section-title reveal">Technical Skills</h2>
+    <p class="section-sub reveal">Across incident management, networking, security, and support operations.</p>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🎯</div>
+        <div class="skill-card-title">Incident Management</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Incident Triage</span>
+          <span class="skill-tag">Ticket Management</span>
+          <span class="skill-tag">SLA Compliance</span>
+          <span class="skill-tag">Root Cause Analysis</span>
+          <span class="skill-tag">Escalation</span>
+          <span class="skill-tag">ITSM</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🔒</div>
+        <div class="skill-card-title">Security</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Log Analysis</span>
+          <span class="skill-tag">Threat Detection</span>
+          <span class="skill-tag">Endpoint Security</span>
+          <span class="skill-tag">IAM</span>
+          <span class="skill-tag">Incident Response</span>
+          <span class="skill-tag">MITRE ATT&CK</span>
+          <span class="skill-tag">The Kill Chain</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🌐</div>
+        <div class="skill-card-title">Networking (CCNA)</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TCP/IP</span>
+          <span class="skill-tag">DNS / DHCP</span>
+          <span class="skill-tag">VPN</span>
+          <span class="skill-tag">LAN/WAN</span>
+          <span class="skill-tag">OSI Model</span>
+          <span class="skill-tag">Subnetting</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🖥️</div>
+        <div class="skill-card-title">Systems & Support</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Windows 10/11</span>
+          <span class="skill-tag">Linux (Ubuntu)</span>
+          <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">Remote Desktop</span>
+          <span class="skill-tag">MS Office 365</span>
+          <span class="skill-tag">Remote Troubleshooting</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">📊</div>
+        <div class="skill-card-title">Analysis & Documentation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Audit Trail Review</span>
+          <span class="skill-tag">Knowledge Base</span>
+          <span class="skill-tag">RCA Documentation</span>
+          <span class="skill-tag">Risk Assessment</span>
+          <span class="skill-tag">ITIL Principles</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">💻</div>
+        <div class="skill-card-title">Development</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Shell Scripting</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────────────────────────── -->
+<section class="exp" id="experience">
+  <div class="section-inner">
+    <p class="section-label reveal">Work History</p>
+    <h2 class="section-title reveal">Experience</h2>
+    <p class="section-sub reveal">Operational roles that directly translate to IT security and support.</p>
+    <div class="timeline">
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-title">Investigation Specialist — Fraud &amp; Risk Operations</div>
+          <span class="exp-date">June,2020 – Oct,2025</span>
+        </div>
+        <div class="exp-company">Amazon India · Bengaluru, India</div>
+        <ul class="exp-bullets">
+          <li>Managed and triaged 80–100 investigation cases daily, applying structured prioritisation workflows analogous to ITSM ticket resolution and severity classification.</li>
+          <li>Performed log analysis and audit trail reviews to identify anomalous patterns and security flags; escalated critical incidents per defined SLA thresholds.</li>
+          <li>Conducted root cause analysis (RCA) on recurring operational failures; documented findings in the internal knowledge base, reducing repeat incidents.</li>
+          <li>Maintained rigorous case documentation — mirroring ITSM ticketing best practices — ensuring accurate audit trails across all case categories.</li>
+          <li>Collaborated cross-functionally with operations, compliance, and risk teams to resolve complex incidents within SLA windows.</li>
+          <li>Consistently achieved top-tier quality scores; trained and onboarded new investigators on tools, procedures, and escalation workflows.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-header">
+          <div class="exp-title">Front-End Web Developer</div>
+          <span class="exp-date">Oct,2018 – Mar,2020</span>
+        </div>
+        <div class="exp-company">First Principle Ventures LLC · Bengaluru, India</div>
+        <ul class="exp-bullets">
+          <li>Developed and maintained responsive web interfaces; diagnosed and resolved cross-browser compatibility issues and client-reported bugs.</li>
+          <li>Provided technical support to stakeholders; documented resolutions and coordinated with backend engineers to resolve connectivity and API defects.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS / BADGES ────────────────────────────────── -->
+<section class="certs" id="certifications">
+  <div class="section-inner">
+    <p class="section-label reveal">Credentials</p>
+    <h2 class="section-title reveal">Certifications &amp; Badges</h2>
+    <p class="section-sub reveal">Verified credentials from accredited organisations.</p>
+    <div class="badges-grid">
+
+      <div class="badge-card reveal" onclick="openCertificate('assets/cc.png')">
+        <div class="badge-icon">🛡️</div>
+        <div class="badge-name">Certified in Cybersecurity (CC)</div>
+        <div class="badge-issuer">ISC2</div>
+        <span class="badge-year">2026</span>
+      </div>
+
+      <div class="badge-card reveal" onclick="openCertificate('assets/CCNA.png')">
+        <div class="badge-icon">🌐</div>
+        <div class="badge-name">Cisco Certified Network Associate</div>
+        <div class="badge-issuer">Cisco · CCNA</div>
+        <span class="badge-year">2018</span>
+      </div>
+
+      <div class="badge-card reveal" onclick="openCertificate('assets/hackathon.png')">
+        <div class="badge-icon">🎓</div>
+        <div class="badge-name">Hackathon Participation</div>
+        <div class="badge-issuer">Security Issue in cloud and Machine to Machine communication</div>
+        <span class="badge-year">2018</span>
+      </div>
+
+      <!-- Add more badge cards below — duplicate this block for each badge/course -->
+      <div class="badge-card reveal" style="border-style:dashed;opacity:0">
+        <div class="badge-icon">➕</div>
+        <div class="badge-name">Add Your Next Badge Here</div>
+        <div class="badge-issuer">e.g. CompTIA Security+</div>
+        <span class="badge-year">–</span>
+      </div>
+
+      <div class="badge-card reveal" style="border-style:dashed;opacity:0">
+        <div class="badge-icon">➕</div>
+        <div class="badge-name">Add Your Next Badge Here</div>
+        <div class="badge-issuer">e.g. Google IT Support</div>
+        <span class="badge-year">–</span>
+      </div>
+
+      <div class="badge-card reveal" style="border-style:dashed;opacity:0">
+        <div class="badge-icon">➕</div>
+        <div class="badge-name">Add Your Next Badge Here</div>
+        <div class="badge-issuer">e.g. Microsoft SC-900</div>
+        <span class="badge-year">–</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────── -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">Get In Touch</p>
+    <h2 class="section-title reveal">Contact</h2>
+    <p class="section-sub reveal">Open to Service Desk, SOC L1, and Security Analyst opportunities. Feel free to reach out.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:prajuli940132@gmail.com" class="contact-card reveal" style="text-decoration:none">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">prajuli940132@gmail.com</div>
+          </div>
+        </a>
+        <a href="tel:+919862337399" class="contact-card reveal" style="text-decoration:none">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+91-9862337399</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/socprajuli94/" target="_blank" rel="noopener" class="contact-card reveal" style="text-decoration:none">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#38BDF8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">https://www.linkedin.com/in/socprajuli94/</div>
+          </div>
+        </a>
+        <a href="https://github.com/prajuli940132" target="_blank" rel="noopener" class="contact-card reveal" style="text-decoration:none">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#38BDF8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">https://github.com/prajuli940132</div>
+          </div>
+        </a>
+        <div class="contact-card reveal">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Bengaluru, India</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="open-to-work reveal">
+        <div class="status-pill" style="margin-bottom:1.2rem;display:inline-flex">
+          <span class="status-dot"></span> Actively Job Seeking
+        </div>
+        <div class="otw-title">Open to the following roles</div>
+        <div class="otw-sub">
+          I'm actively applying and available for interviews. If you're hiring for any of the roles below — or know someone who is — I'd love to connect.
+        </div>
+        <div class="role-tags">
+          <span class="role-tag">IT Service Desk Analyst</span>
+          <span class="role-tag">SOC Analyst L1</span>
+          <span class="role-tag">Security Analyst</span>
+          <span class="role-tag">Technical Support Specialist</span>
+          <span class="role-tag">IT Support Engineer</span>
+          <span class="role-tag">Network Support</span>
+        </div>
+        <a href="assets/prakash_parajuli_resume.pdf" download class="btn btn-primary" style="width:100%;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download My Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+    <a href="assets/prakash_parajuli_resume.pdf">Resume</a>
+  </div>
+  <p class="footer-copy">© 2025 Prakash · Bengaluru, India · Built for opportunities in IT Security &amp; Support</p>
+</footer>
+
+<!-- ── SCRIPTS ─────────────────────────────────────────────────── -->
+<script>
+/* ════════════════════════════════════════════════════════════════
+   MATRIX-STYLE IT/SOC KEYWORD RAIN
+   - Columns of IT & security keywords fall like Matrix code
+   - Each column cycles through words at varying speeds
+   - Leading word is bright cyan; trail fades to deep blue
+   - Canvas opacity: 0.5 so foreground content is never obstructed
+   - Fully paused (RAF cancelled) when hero scrolls out of view;
+     resumes automatically on scroll back. Zero CPU when hidden.
+   ════════════════════════════════════════════════════════════════ */
+(function(){
+  const canvas = document.getElementById('heroCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  // ── IT / SOC / Service Desk keyword pool ───────────────────
+  const WORDS = [
+    // Security
+    'FIREWALL','SIEM','IDS','IPS','SOC','THREAT','MALWARE','PHISHING',
+    'ENDPOINT','PATCH','CVE','MITRE','ATT&CK','ZERO-DAY','SANDBOX',
+    'FORENSICS','INCIDENT','RESPONSE','PAYLOAD','EXPLOIT','IOC',
+    'ENCRYPTION','VPN','TLS','SSL','PKI','MFA','IAM','RBAC',
+    // Networking
+    'TCP/IP','DNS','DHCP','BGP','OSPF','VLAN','LAN','WAN','NAT',
+    'SUBNET','GATEWAY','ROUTING','SWITCH','PACKET','ACL','QoS',
+    // IT Support / Service Desk
+    'ITSM','SLA','RCA','ITIL','TICKET','HELPDESK','ESCALATE',
+    'TRIAGE','UPTIME','PATCH','ASSET','CMDB','CHANGE MGMT',
+    'INCIDENT','SERVICE DESK','KNOWLEDGE BASE','AUDIT',
+    // Systems
+    'LINUX','WINDOWS','ACTIVE DIR','POWERSHELL','BASH','SYSLOG',
+    'MONITOR','ALERT','LOG','METRIC','DASHBOARD','ANSIBLE',
+    // Certifications
+    'ISC2 CC','CCNA','CompTIA','Security+','CySA+','CEH',
+  ];
+
+  const FONT_SIZE = 11;          // px — tight, readable
+  const COL_GAP   = 90;          // px between keyword columns
+  const TRAIL_LEN = 8;           // number of words visible per column
+  const SPEED_MIN = .01;         // rows per frame (slow)
+  const SPEED_MAX = .1;         // rows per frame (fast)
+
+  // Colours — all semi-transparent to respect the 50% canvas opacity
+  const COLOR_HEAD  = 'rgba(224, 247, 255, 0.95)'; // near-white lead word
+  const COLOR_BRIGHT= 'rgba(56,  189, 248, 0.85)'; // cyan  — 2nd word
+  const COLOR_MID   = 'rgba(46,  128, 200, 0.60)'; // steel — mid trail
+  const COLOR_DIM   = 'rgba(30,  80,  140, 0.30)'; // deep  — tail fade
+
+  let W, H, cols=[], raf=null, active=true;
+
+  // ── Column factory ──────────────────────────────────────────
+  function makeCol(x){
+    const speed = SPEED_MIN + Math.random()*(SPEED_MAX - SPEED_MIN);
+    return {
+      x,
+      y: -Math.random() * (H / FONT_SIZE / speed),  // staggered start
+      speed,
+      words: Array.from({length: TRAIL_LEN}, () =>
+        WORDS[Math.floor(Math.random()*WORDS.length)]
+      ),
+      wordIdx: 0,
+      stepAcc: 0,   // fractional row accumulator
+    };
+  }
+
+  // ── Resize ──────────────────────────────────────────────────
+  function resize(){
+    const hero = document.getElementById('home');
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+    const count = Math.ceil(W / COL_GAP) + 1;
+    cols = Array.from({length: count}, (_, i) =>
+      makeCol(i * COL_GAP + COL_GAP * 0.3)
+    );
+  }
+
+  // ── Draw one frame ──────────────────────────────────────────
+  function draw(){
+    // Fade trail: semi-transparent fill over previous frame
+    ctx.fillStyle = 'rgba(13, 31, 53, 0.22)';
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.textAlign = 'left';
+
+    cols.forEach(col => {
+      // Advance position
+      col.stepAcc += col.speed;
+      const steps = Math.floor(col.stepAcc);
+      col.stepAcc -= steps;
+      col.y += steps;
+
+      // When column scrolls fully off bottom, reset to top
+      const colHeight = col.words.length * (FONT_SIZE + 14);
+      if (col.y * (FONT_SIZE + 14) > H + colHeight) {
+        col.y = -col.words.length - Math.random() * 10;
+        // Refresh words
+        col.words = Array.from({length: TRAIL_LEN}, () =>
+          WORDS[Math.floor(Math.random()*WORDS.length)]
+        );
+      }
+
+      // Draw each word in the trail
+      col.words.forEach((word, i) => {
+        const rowY = (col.y - i) * (FONT_SIZE + 14);
+        if(rowY < -20 || rowY > H + 20) return;
+
+        // Pick colour by position in trail
+        let color;
+        if(i === 0)       color = COLOR_HEAD;
+        else if(i === 1)  color = COLOR_BRIGHT;
+        else if(i <= 3)   color = COLOR_MID;
+        else              color = COLOR_DIM;
+
+        // Slightly larger font for lead word
+        const fs = i === 0 ? FONT_SIZE + 1 : FONT_SIZE;
+        ctx.font = `${i <= 1 ? '600' : '400'} ${fs}px 'JetBrains Mono', monospace`;
+        ctx.fillStyle = color;
+        ctx.fillText(word, col.x, rowY);
+
+        // Swap out tail word occasionally for variety
+        if(i === col.words.length - 1 && Math.random() < 0.015){
+          col.words[Math.floor(Math.random()*col.words.length)] =
+            WORDS[Math.floor(Math.random()*WORDS.length)];
+        }
+      });
+    });
+  }
+
+  // ── Loop ────────────────────────────────────────────────────
+  function loop(){
+    if(!active){ raf=null; return; }
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+
+  function startAnim(){
+    if(raf) return;
+    active = true;
+    canvas.classList.remove('paused');
+    raf = requestAnimationFrame(loop);
+  }
+
+  function stopAnim(){
+    active = false;
+    if(raf){ cancelAnimationFrame(raf); raf=null; }
+    canvas.classList.add('paused');
+  }
+
+  // ── IntersectionObserver — pause when hero leaves viewport ──
+  const hero = document.getElementById('home');
+  const visObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) startAnim();
+      else stopAnim();
+    });
+  }, { threshold: 0.05 });
+  visObs.observe(hero);
+
+  // ── Init ────────────────────────────────────────────────────
+  resize();
+  window.addEventListener('resize', resize, { passive:true });
+  startAnim();
+})();
+
+/* ════════════════════════════════════════════════════════════════
+   EXISTING SITE SCRIPTS
+   ════════════════════════════════════════════════════════════════ */
+// Mobile menu
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobileMenu');
+  if(!e.target.closest('nav') && !e.target.closest('#mobileMenu')){
+    menu.classList.remove('open');
+  }
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav active state on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#'+current
+      ? 'var(--cyan)' : '';
+  });
+}, { passive: true });
+
+function openCertificate(imagePath){
+  document.getElementById('certificateImage').src = imagePath;
+  document.getElementById('certificateModal').style.display = 'flex';
+}
+
+function closeCertificate(){
+  document.getElementById('certificateModal').style.display = 'none';
+}
+
+document.getElementById('certificateModal')?.addEventListener('click', function(e){
+  if(e.target === this){
+    closeCertificate();
+  }
+});
+
+</script>
+
+<div id="certificateModal" class="certificate-modal">
+  <span class="close-certificate" onclick="closeCertificate()">&times;</span>
+  <img id="certificateImage" src="" alt="Certificate">
+</div>
+
+</body>
+</html>
